@@ -1,0 +1,77 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'react-phone-input-2/lib/style.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import "tailwindcss";
+
+@tailwind utilities;
+
+
+body{
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
+
+@theme {
+  /* Tipografía */
+  --font-sans: 'Poppins', sans-serif;
+  --font-narrow: 'Archivo Narrow', sans-serif;
+  /* Tamaños de texto */
+  --text-h1: 64px;
+  --leading-h1: 76px;
+
+  --text-h2: 36px;
+  --leading-h2: 44px;
+
+  --text-h3: 28px;
+  --leading-h3: 36px;
+
+  --text-h4: 20px;
+  --leading-h4: 28px;
+
+  --text-body-1: 18px;
+  --leading-body-1: 28px;
+
+  --text-body-2: 16px;
+  --leading-body-2: 24px;
+
+  --text-body-3: 14px;
+  --leading-body-3: 20px;
+
+  --text-body-4: 12px;
+  --leading-body-4: 16px;
+
+  /* Paleta de colores */
+  --color-neutral-900: #1A1A1A; /* ~10% L */
+  --color-neutral-800: #4D4D4D; /* ~30% L */
+  --color-neutral-700: #7F7F7F; /* ~50% L */
+  --color-neutral-600: #B1B1B1; /* ~70% L */
+  --color-neutral-500: #E4E4E4; /* 50% exacto */
+  --color-neutral-400: #EFEFEF; /* ~94% L */
+  --color-neutral-300: #FAFAFA; /* ~98% L */
+  --color-white: #FFFFFF;
+
+  --color-primary: #800606;
+  --color-secondary: #131313;
+  --color-info: #820000;
+
+  --color-secondary-900: #131313; /* L ≈ 7.45% */
+  --color-secondary-800: #464646; /* L ≈ 27.45% */
+  --color-secondary-700: #797979; /* L ≈ 47.45% */
+  --color-secondary-600: #ACACAC; /* L ≈ 67.45% */
+  --color-secondary-500: #DFDFDF; /* L ≈ 87.45% */
+
+  --color-light-300: #F7E4E4;  /* L ≈ 90% */
+  --color-light-400: #F7D4D4;  /* L ≈ 90% */
+  --color-light-500: #EB8E8E;  /* L ≈ 74% */
+  --color-light-600: #DF4949;  /* L ≈ 58% */
+  --color-light-700: #B62020;  /* L ≈ 42% */
+  --color-light-800: #800606;  /* exacto (saturación ≈ 91%, L ≈ 26.3%) */
+  --color-light-900: #2B0808;  /* L ≈ 10% */
+
+  --color-alerta: #FFA000;
+  --color-error: #FF3B30;
+  --color-exito: #4CAF50;
+}
