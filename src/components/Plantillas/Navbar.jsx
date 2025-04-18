@@ -32,7 +32,7 @@ const redirectWhatsApp = () => {
 
 function Navbar() {
   return (
-    <nav className=" sticky top-0 z-50 bg-(--color-secondary)">
+    <nav className="fixed w-full top-0 z-50 bg-(--color-secondary)">
       {/* Contenido principal del navbar */}
       <div className="p-1 pt-2 px-8 flex justify-between items-center">
         {/* Logo */}
@@ -45,7 +45,7 @@ function Navbar() {
               <li key={link.id}>
                 <a
                   href={link.link}
-                  className="md:text-base text-body-4 text-white hover:text-(--color-light-900)"
+                  className="md:text-base text-body-4 text-white hover:text-(--color-light-800)"
                 >
                   {link.title}
                 </a>

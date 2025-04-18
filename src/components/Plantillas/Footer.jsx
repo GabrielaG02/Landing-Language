@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-secondary text-center text-white lg:text-left relative z-[1100]">
       {/* Barra superior con gradiente */}
       <div
-        className="h-[4px] bg-gradient-to-r from-secondary via-primary to-secondary"
+        className="h-[4px] bg-gradient-to-r from-secondary-800 via-primary to-secondary-800"
       ></div>
 
       {/* Contenido principal del footer */}

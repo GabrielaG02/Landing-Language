@@ -1,7 +1,8 @@
 // Hero.jsx
 import React from 'react';
 import Button from '../Atoms/Button';
-import sapLogo from '../../assets/logoSap.webp';
+// import sapLogo from '../../assets/logoSap.webp';
+import heroBackground from '../../assets/hero-background.webp'
 
 export default function Hero() {
   const handleContactClick = () => {
@@ -11,62 +12,41 @@ export default function Hero() {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const redirectSAP = () => {
-    window.open("https://training.sap.com/training-locations/co/bogota-business-support", "_blank");
-  };
+  // const redirectSAP = () => {
+  //   window.open("https://training.sap.com/training-locations/co/bogota-business-support", "_blank");
+  // };
   return (
-    <section id='inicio' className="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-10 bg-white sp">
+    <section id='inicio' className="h-[100vh] flex items-center justify-between px-10 md:px-20 bg-cover bg-center"
+      style={{ backgroundImage: `url(${heroBackground})` }}
+    >
+      <div className='absolute inset-0 bg-black/50 h-full'></div>
       {/* Contenido Izquierdo */}
-      <div className="md:w-1/2 space-y-6">
-        {/* Etiqueta pequeña */}
-        <span className="inline-block font-(family-name:--font-narrow) bg-(--color-neutral-500) text-base text-(--color-neutral-900) px-2 py-1 uppercase font-medium rounded">
-          Business Support
+      <div className="md:w-[50vw] ml-[4vw] space-y-6 z-1 backdrop-blur-[3px] rounded-xl p-10 mt-15 shadow-[12px_12px_15px_-2px_var(--color-neutral-700)]">
+      {/* Etiqueta pequeña */}
+        <span className="inline-block bg-(--color-neutral-900) text-base text-(--color-white) px-2 py-1 font-normal rounded">
+        Latin Language Solutions
         </span>
 
         {/* Título principal: FORMACIÓN + imagen SAP */}
-        <h1 className="font-(family-name:--font-narrow) font-bold text-(--color-primary)  md:text-7xl text-5xl">
-          FORMACIÓN{' '}
-          <img
-            src={sapLogo}
-            alt="SAP"
-            className="inline-block h-10  md:h-10 self-center"
-          />
+        <h1 className=" font-semibold text-(--color-white)  sm:text-5xl md:text-5xl lg:text-6xl text-5xl">
+          Certified Translations & Interpretations{' '}
         </h1>
 
-        {/* Subtítulo */}
-        <p className="font-(family-name:--font-narrow) font-semibold text-(--color-secondary-700) md:text-4xl text-2xl ">
-          Conozca nuestra programación de capacitaciones SAP
-        </p>
-
         {/* Descripción */}
-        <p className="text-(--color-neutral-900) text-base md:text-lg">
-          Optimiza tu negocio con SAP ERP, el software líder en gestión empresarial.
-          Potencia tu equipo con la capacitación de SAP Education.
+        <p className="text-(--color-white) text-base  md:text-lg w-75/100">
+          Expert Spanish & Portuguese to English services for legal, medical & business needs.
         </p>
 
-<div className=' space-x-4 space-y-5'>      
-    {/* Botón de "Contáctanos"  */}
-        <Button
-          text="Contáctanos"
-          onClick={handleContactClick}
-          tipo="primario"
-        />
-                {/* Botón de "Membresia"  */}
+        <div className=' space-x-4 space-y-5'>
+          {/* Botón de "Contáctanos"  */}
           <Button
-          text="Valida nuestra membresía"
-          onClick={redirectSAP}
-          tipo="secundario"
-          iconName="bi bi-patch-check"
-        /></div>
+            text="Learn More"
+            onClick={handleContactClick}
+            tipo="primario"
+          />
 
-      </div>
-      {/* Imagen Derecha (las 4 personas en una sola imagen) */}
-      <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-        <img
-          src="https://landingsapyaulas.blob.core.windows.net/imagesap/imgHero.webp"
-          alt="Personas"
-          className="max-w-full h-auto"
-        />
+        </div>
+
       </div>
     </section>
   );
