@@ -53,12 +53,12 @@ body{
   --color-neutral-300: #FAFAFA; /* ~98% L */
   --color-white: #FFFFFF;
 
-  --color-primary: #800606;
-  --color-secondary: #131313;
+  --color-primary: #820000;
+  --color-secondary: #000000;
   --color-info: #820000;
 
   --color-secondary-900: #131313; /* L ≈ 7.45% */
-  --color-secondary-800: #464646; /* L ≈ 27.45% */
+  --color-secondary-800: #262626; /* L ≈ 27.45% */
   --color-secondary-700: #797979; /* L ≈ 47.45% */
   --color-secondary-600: #ACACAC; /* L ≈ 67.45% */
   --color-secondary-500: #DFDFDF; /* L ≈ 87.45% */

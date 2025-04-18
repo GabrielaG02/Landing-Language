@@ -6,17 +6,22 @@ import Hamburguer from '../Atoms/HamburguerButton'
 const navbarlinks = [
   {
     id: 1,
-    title: "Inicio",
-    link: "#inicio",
+    title: "Home",
+    link: "#Home",
   },
   {
     id: 2,
-    title: "Acerca de",
+    title: "About Us",
     link: "#acerca",
   },
   {
     id: 3,
-    title: "Contacto",
+    title: "Blog",
+    link: "#blog",
+  },
+  {
+    id: 4,
+    title: "Contact",
     link: "#contact",
   },
 ]
@@ -29,18 +34,18 @@ function Navbar() {
   return (
     <nav className=" sticky top-0 z-50 bg-(--color-secondary)">
       {/* Contenido principal del navbar */}
-      <div className="py-4 px-4 flex justify-between items-center">
+      <div className="p-1 pt-2 px-8 flex justify-between items-center">
         {/* Logo */}
-        <Logo size="w-12 h-10" />
+        <Logo size="w-16 h-16" />
 
         {/* Navegación para pantallas grandes */}
-        <div className="md:flex flex-1 justify-center items-center hidden">
+        <div className="md:flex flex-1 justify-end items-center mr-6 hidden">
           <ul className="flex justify-items-center space-x-4">
             {navbarlinks.map(link => (
               <li key={link.id}>
                 <a
                   href={link.link}
-                  className="md:text-[1.1vw] text-body-4 text-white hover:text-(--color-light-900)"
+                  className="md:text-base text-body-4 text-white hover:text-(--color-light-900)"
                 >
                   {link.title}
                 </a>
@@ -51,10 +56,10 @@ function Navbar() {
 
         {/* Botón con ícono de WhatsApp */}
         <Button
-          text="Contactar un Asesor"
+          text="Contact Us"
           tipo="navbar"
           onClick={redirectWhatsApp}
-          iconName="bi bi-whatsapp"
+          // iconName="bi bi-whatsapp"
         />
 
         {/* Menú hamburguesa para móviles */}
@@ -63,7 +68,7 @@ function Navbar() {
 
       {/* Línea con gradiente al final del navbar */}
       <div
-         className="h-[4px] bg-gradient-to-r from-secondary via-primary to-secondary"
+         className="h-[4px] bg-gradient-to-r from-secondary-800 via-primary to-secondary-800"
       ></div>
     </nav>
   )
