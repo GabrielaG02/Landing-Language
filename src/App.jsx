@@ -1,6 +1,6 @@
 import Navbar from "./components/Plantillas/Navbar"
 import Hero from "./components/Plantillas/Hero"
-import Objectives  from "./components/Plantillas/Objectives.jsx"
+import WhyChoose  from "./components/Plantillas/WhyChoose.jsx"
 import Benefits from "./components/Plantillas/Benefits.jsx"
 import Impacts from "./components/Plantillas/Impacts.jsx"
 import Modalities from "./components/Plantillas/Modalities.jsx"
@@ -21,7 +21,7 @@ function App() {
     
     <Navbar/>
     <Hero/>
-    <Objectives/>
+    <WhyChoose/>
     <Benefits/>
     <Impacts/>
     <Modalities/>

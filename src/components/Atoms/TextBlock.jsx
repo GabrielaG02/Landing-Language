@@ -7,9 +7,9 @@ const TextBlock = ({
   paragraph,  // o un único string
   // Props de estilo con valores default
   subtitleSize = "text-xl",
-  paragraphSize = "text-[var(--text-body-2)]",
-  subtitleColor = "text-[var(--color-info)]",
-  paragraphColor = "text-[var(--color-neutral-800)]",
+  paragraphSize = "text-md",
+  subtitleColor = "text-[var(--color-neutral-800)]",
+  paragraphColor = "text-[var(--color-neutral-700)]",
   subtitleClassName = "",
   paragraphClassName = ""
 }) => {
@@ -18,7 +18,7 @@ const TextBlock = ({
 
   return (
     <div className="mt-4 ">
-      <p className={`font-semibold ${subtitleSize} ${subtitleColor} ${subtitleClassName}`}>
+      <p className={`font-medium ${subtitleSize} ${subtitleColor} ${subtitleClassName}`}>
         {subtitle}
       </p>
       {paraArray.map((para, idx) => (
