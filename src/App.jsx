@@ -1,9 +1,10 @@
 import Navbar from "./components/Plantillas/Navbar"
 import Hero from "./components/Plantillas/Hero"
 import WhyChoose  from "./components/Plantillas/WhyChoose.jsx"
-import Benefits from "./components/Plantillas/Benefits.jsx"
+import GetToKnow from "./components/Plantillas/GetToKnow.jsx"
 import Impacts from "./components/Plantillas/Impacts.jsx"
-import Modalities from "./components/Plantillas/Modalities.jsx"
+import WhatOurClientsSay from "./components/Plantillas/WhatOurClientsSay.jsx"
+import OurServices from "./components/Plantillas/OurServices.jsx"
 import Courses from "./components/Plantillas/Courses.jsx"
 import Types from "./components/Plantillas/Types.jsx"
 import TypesCap from "./components/Plantillas/TypesCap.jsx"
@@ -22,14 +23,11 @@ function App() {
     <Navbar/>
     <Hero/>
     <WhyChoose/>
-    <Benefits/>
-    <Impacts/>
-    <Modalities/>
-    <Courses/>
-    <TypesCap/>
-    <Types/>
+    <GetToKnow/>
+    <OurServices/>
 
-    <Calendar/>
+    <WhatOurClientsSay/>
+
     <Contact/>
     <Footer/>
     <Banner />

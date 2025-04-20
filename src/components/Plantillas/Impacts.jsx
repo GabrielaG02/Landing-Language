@@ -65,12 +65,15 @@ export default function Impacts() {
         {/* Fila superior: 4 columnas */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {topCards.map(item => (
-            <Card
-              key={item.id}
-              iconName={item.iconName}
-              title={item.title}
-              paragraph={item.paragraph}
-            />
+          <Card
+          key={item.id}
+          // Si el item lleva imagen, la usará; si no, caerá en el icono
+          imageSrc={item.imageSrc}
+          imageAlt={item.imageAlt}
+          iconName={item.iconName}
+          title={item.title}
+          paragraph={item.paragraph}
+        />
           ))}
         </div>
 

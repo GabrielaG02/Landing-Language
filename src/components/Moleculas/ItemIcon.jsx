@@ -23,7 +23,7 @@ export default function ModalityItem({ iconName, title, paragraph }) {
         subtitle={title}
         paragraph={paragraph}
         subtitleSize="text-xl xl:text-2xl"
-        subtitleColor="text-(--color-info)"
+        subtitleColor="text-(--color-black)"
         paragraphSize="text-[var(--text-body-3)]"
         paragraphColor="text-[var(--color-neutral-700)]"
         subtitleClassName="font-bold"

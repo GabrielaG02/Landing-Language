@@ -1,7 +1,7 @@
 // Hero.jsx
 import React from 'react';
 import Button from '../Atoms/Button';
-// import sapLogo from '../../assets/logoSap.webp';
+import Overlay from '../Atoms/Overlay';
 import heroBackground from '../../assets/hero-background.svg'
 
 export default function Hero() {
@@ -16,12 +16,12 @@ export default function Hero() {
   //   window.open("https://training.sap.com/training-locations/co/bogota-business-support", "_blank");
   // };
   return (
-    <section id='inicio' className="h-[100vh] flex justify-center sm:justify-start items-center  px-10 md:px-20 bg-cover bg-center"
+    <section id='inicio' className="relative h-full min-h-[100vh] lg:h-[100vh] flex justify-center sm:justify-start items-center  px-10 md:px-20 bg-cover bg-center"
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
-      <div className='absolute inset-0 bg-black/40 h-full'></div>
+      <Overlay className="z-20"/>
       {/* Contenido Izquierdo */}
-      <div className="w-[90vw] sm:w-[70vw] md:w-[60vw] lg:w-[50vw] sm:ml-[2vw] xl:ml-[4vw] space-y-6 z-1 backdrop-blur-[3px] rounded-xl p-10 mt-15 shadow-[0px_10px_15px_-2px_var(--color-neutral-700)] sm:shadow-[12px_12px_15px_-1px_var(--color-neutral-700)]">
+      <div className="w-[90vw] mb-20 mt-25 lg:mt-15 lg:my-0 sm:w-[70vw] md:w-[60vw] lg:w-[50vw] sm:ml-[2vw] xl:ml-[4vw] space-y-6 z-1 backdrop-blur-[3px] rounded-xl p-10 shadow-[0px_10px_15px_-2px_var(--color-neutral-700)] sm:shadow-[12px_12px_15px_-1px_var(--color-neutral-700)]">
       {/* Etiqueta pequeña */}
         <span className="inline-block bg-(--color-neutral-900) text-base text-(--color-white) px-2 py-1 font-normal rounded">
         Latin Language Solutions
