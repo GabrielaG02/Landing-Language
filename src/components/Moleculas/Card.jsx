@@ -10,6 +10,8 @@ export default function Card({
   imageAlt = '',
   title,
   paragraph,
+  paragraphExtended,   // <–– nuevo
+  isExpanded = false,   // <–– nuevo, por defecto false
   span = '',
   variant = 'principal',      // <-- nuevo prop
 }) {
@@ -61,6 +63,14 @@ export default function Card({
         subtitleAlign="text-left"
         paragraphAlign="text-left"
       />
+      {isExpanded && paragraphExtended && (
+        <div className="mt-4 text-left px-4">
+          <h4 className="font-semibold text-base mb-1">Más información</h4>
+          <p className="text-sm text-[var(--color-secondary)]">
+            {paragraphExtended}
+          </p>
+        </div>
+      )}
 
       {/* Solo en la variante principal mostramos el botón */}
       {variant === 'principal' && (
