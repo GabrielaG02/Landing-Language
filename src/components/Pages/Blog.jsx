@@ -1,4 +1,4 @@
-
+import Hero from "../Plantillas/Hero.jsx"
 
 
 

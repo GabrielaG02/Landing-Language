@@ -1,12 +1,26 @@
 // src/components/templates/Contact.jsx
 import React from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import ContactForm from '../Moleculas/Form';
-import BannerTitle from '../Moleculas/BannerTitle';
-import ContactUsGuy from '../../assets/contactUsGuy.svg'
+import img from '../../assets/imgHome5.svg'
 
 export default function Contact() {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          window.location.hash = ''; // Borra primero
+          window.location.hash = id; // Setea hash de nuevo para activar scroll nativo
+        }, 50);
+      }
+    }
+  }, [location]);
   return (
-    <section id="contact" className='scroll-mt-4 md:scroll-mt-20'>
+    <section id="contact" className='scroll-mt-4 md:scroll-mt-72'>
       {/* Banner superior */}
 
 
@@ -16,7 +30,7 @@ export default function Contact() {
           {/* Columna del formulario */}
           <div className="order-2 md:order-1 mt-0 lg:mt-auto justify-self-center mx-auto  md:mx-0 w-90/100 md:pl-0 md:w-40/100 xl:w-35/100 flex flex-col md:justify-center">
             <img
-              src={ContactUsGuy}
+              src={img}
               alt="Contacto"
               className="max-w-full h-auto object-cover"
             />

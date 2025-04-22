@@ -87,8 +87,8 @@ export default function Form() {
   return (
     <div className="flex flex-col space-y-6">
       <div>
-        <h2 className="text-3xl font-semibold text-[var(--color-primary)] mb-5">Contact Us</h2>
-        <h3 className="text-(--color-neutral-700) font-medium text-lg">
+        <h2 className="text-3xl lg:text-4xl font-semibold text-[var(--color-primary)] mb-5">Contact Us</h2>
+        <h3 className="text-(--color-neutral-700) font-medium text-lg md:text-xl">
           We are here to help with your linguistic needs
         </h3>
       </div>

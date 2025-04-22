@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Icon from '../Atoms/Icon.jsx';
@@ -33,36 +33,47 @@ const testimonials = [
   },
   // ... añade más testimonios si lo deseas
 ];
+const handleContactClick = () => {
+  // Busca el elemento con id "contact" y hace scroll hacia él
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export default function TestimonialSlider() {
   return (
     <section className="relative bg-[var(--color-neutral-500)] py-12">
       <div className="">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 max-w-[75vw] mx-auto">
+        <div className="flex flex-col md:flex-row  items-center justify-between mb-8 max-w-[100%] mx-20">
           <div>
-            <h2 className="text-3xl font-semibold text-[var(--color-primary)]">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-[var(--color-primary)]">
               What Our Clients Say
             </h2>
-            <p className="mt-2 text-base text-black">
+            <p className="mt-2 text-lg md:text-xl text-black">
               Satisfied clients who trust our services
             </p>
           </div>
-          <Button text="Contact Us" tipo="primario" />
+          <Button text="Contact Us" tipo="primario" onClick={handleContactClick} />
         </div>
+
+
 
         {/* Swiper Slider */}
         <div className="relative w-full">
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}      // ⬅️ registra el módulo
             spaceBetween={24}
             slidesPerView="auto"
-            centeredSlides={true}
-            loop={true}
-            navigation={{
-              prevEl: '.custom-prev',
-              nextEl: '.custom-next'
+            centeredSlides
+            loop
+            autoplay={{
+              delay: 10000,
+              reverseDirection: true,            // derecha
+              disableOnInteraction: false        // sigue aunque hagan clic/drag
             }}
+            navigation={{ prevEl: '.custom-prev', nextEl: '.custom-next' }}
             className="pb-8"
           >
             {testimonials.map(item => (
@@ -92,20 +103,20 @@ export default function TestimonialSlider() {
 
           {/* Custom Navigation Buttons */}
           <div className='flex space-x-4 justify-center'>
-          <div className="left-0 transform  custom-prev z-20">
-            <Icon
-              name="bi bi-arrow-left-circle"
-              size="2.4rem"
-              className="text-[var(--color-primary)]"
-            />
-          </div>
-          <div className="right-0 transform  custom-next z-20">
-            <Icon
-              name="bi bi-arrow-right-circle"
-              size="2.4rem"
-              className="text-[var(--color-primary)]"
-            />
-          </div>
+            <div className="left-0 transform  custom-prev z-20">
+              <Icon
+                name="bi bi-arrow-left-circle"
+                size="2.4rem"
+                className="text-[var(--color-primary)]"
+              />
+            </div>
+            <div className="right-0 transform  custom-next z-20">
+              <Icon
+                name="bi bi-arrow-right-circle"
+                size="2.4rem"
+                className="text-[var(--color-primary)]"
+              />
+            </div>
           </div>
 
         </div>

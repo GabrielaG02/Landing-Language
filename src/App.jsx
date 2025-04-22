@@ -11,7 +11,8 @@ function App() {
       {/* Ruta padre: todo lo que esté dentro de Layout */}
       <Route path="/" element={<Layout />}>
         {/* Ruta index = “/” */}
-        <Route index element={<Home />} />
+        <Route index element={<Home />} /> 
+        <Route path="Home" element={<Home />} />
         {/* /about-us */}
         <Route path="AboutUs" element={<AboutUs />} />
         {/* /blog */}

@@ -2,22 +2,23 @@ import React from 'react'
 import Logo from '../Atoms/Logo'
 import Button from '../Atoms/Button'
 import Hamburguer from '../Atoms/HamburguerButton'
+import { HashLink } from 'react-router-hash-link' 
 
 const navbarlinks = [
   {
     id: 1,
     title: "Home",
-    link: "#inicio",
+    link: "/Home#Home",
   },
   {
     id: 2,
     title: "About Us",
-    link: "/AboutUs",
+    link: "/AboutUs#get",
   },
   {
     id: 3,
     title: "Services",
-    link: "#services",
+    link: "/Home#services",
   },
   {
     id: 4,
@@ -27,7 +28,7 @@ const navbarlinks = [
   {
     id: 5,
     title: "Contact",
-    link: "#contact",
+    link: "/Home#contact",
   },
 ]
 
@@ -48,12 +49,13 @@ function Navbar() {
           <ul className="flex justify-items-center space-x-4">
             {navbarlinks.map(link => (
               <li key={link.id}>
-                <a
-                  href={link.link}
-                  className="md:text-base text-body-4 text-white hover:text-(--color-light-800)"
-                >
-                  {link.title}
-                </a>
+                <HashLink
+        smooth
+        to={link.link}
+        className="md:text-base text-body-4 text-white hover:text-[var(--color-light-800)]"
+      >
+        {link.title}
+      </HashLink>
               </li>
             ))}
           </ul>

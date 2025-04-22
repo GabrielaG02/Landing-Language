@@ -6,7 +6,7 @@ export default function DynamicExpander({ cards = [] }) {
   const [expandedId, setExpandedId] = useState(null)
   const [columns, setColumns] = useState(1)
 
-  const cardHeightVh = 65
+  const cardHeightVh = 80
 
   // Determina el número de columnas según el ancho
   const updateColumns = () => {
@@ -70,7 +70,7 @@ export default function DynamicExpander({ cards = [] }) {
             {isExpanded && (
               <button
                 onClick={e => { e.stopPropagation(); handleClick(item.id) }}
-                className="absolute top-[2vh] right-[2vw] bg-white text-black rounded-full w-6 h-6 flex items-center justify-center z-1"
+                className="absolute top-[2vh] right-[2vw] bg-white text-black rounded-full w-4 h-4 flex items-center justify-center z-1"
               >
                 ×
               </button>

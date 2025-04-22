@@ -10,11 +10,11 @@ import TextBlock from '../Atoms/TextBlock.jsx';
  */
 export default function ModalityItem({ iconName, title, paragraph }) {
   return (
-    <div className="flex items-center space-x-6">
+    <div className="flex items-center space-x-4">
       {/* Ícono de la modalidad */}
       <Icon
         name={iconName}
-        size="2rem "
+        size="2rem 2.5rem"
         className="text-[var(--color-primary)] " 
       />
       
@@ -27,6 +27,8 @@ export default function ModalityItem({ iconName, title, paragraph }) {
         paragraphSize="text-[var(--text-body-3)]"
         paragraphColor="text-[var(--color-neutral-700)]"
         subtitleClassName="font-bold"
+        subtitleAlign="text-left"
+        paragraphAlign = "md:text-left"
       />
     </div>
   );

@@ -2,35 +2,44 @@
 import React from 'react';
 import Icon from '../Atoms/Icon';
 
-/**
- * Molécula que muestra:
- * - Ícono de Bootstrap
- * - Título en color principal
- * - Descripción breve
- */
-export default function VerticalItem({ iconName, title, paragraph }) {
+export default function VerticalItem({
+  iconName,
+  title,
+  paragraph,
+  // Props nuevos con valores por defecto
+  iconColor    = 'text-[var(--color-primary)]',
+  titleColor   = 'text-[var(--color-info)]',
+  paragraphColor = 'text-[var(--color-neutral-900)]',
+}) {
   return (
     <div className="flex flex-col items-center text-center space-y-0 md:space-y-3">
-      {/* Ícono en la parte superior */}
+      {/* Ícono */}
       <Icon
         name={iconName}
         size="3rem"
-        className="text-(--color-primary)"
+        className={iconColor}
       />
 
-<div  className='space-y-3 md:space-y-1  m-5 md:m-0'>
-      {/* Título */}
-      <h3 className="text-(--color-info) font-semibold text-2xl md:text-xl">
-        {title}
-      </h3>
+      <div className="space-y-3 md:space-y-1 m-5 md:m-0">
+        {/* Título, usando titleColor */}
+        <h3
+          className={`
+            ${titleColor}
+            font-semibold
+            text-2xl md:text-xl
+          `}
+        >
+          {title}
+        </h3>
 
-      {/* Descripción */}
-      <p className="text-[var(--color-neutral-900)] text-xl md:text-lg">
-        {paragraph}
-      </p>
-
-
-</div>
+        {/* Párrafo, usando paragraphColor */}
+        <p className={`
+          ${paragraphColor}
+          text-xl md:text-lg
+        `}>
+          {paragraph}
+        </p>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import Button from '../Atoms/Button.jsx';
 import TextBlock from '../Atoms/TextBlock.jsx';
 import Overlay from '../Atoms/Overlay.jsx';
-import getToKnowBackground from '../../assets/getToKnowBackground.svg'
+import img from '../../assets/imgHome3.svg'
 
 export default function Benefits() {
   const handleContactClick = () => {
@@ -15,8 +15,8 @@ export default function Benefits() {
   };
 
   return (
-    <section className="relative h-full min-h-[90vh] lg:h-[80vh] flex justify-center sm:justify-end items-center  px-10 md:px-[14vw]  bg-no-repeat bg-cover "
-      style={{ backgroundImage: `url(${getToKnowBackground})` }}
+    <section id='get' className="relative h-full min-h-[90vh] lg:h-[80vh] flex justify-center sm:justify-end items-center  px-10 md:px-[14vw]  bg-no-repeat bg-cover "
+      style={{ backgroundImage: `url(${img})` }}
       >
       <Overlay className="z-10"/>
       {/* Bloque de texto */}

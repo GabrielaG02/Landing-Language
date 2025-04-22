@@ -3,9 +3,11 @@ import React from 'react';
 
 const TextBlock = ({
   subtitle,
-  paragraphs, // puede ser un array
-  paragraph,  // o un único string
-  // Props de estilo con valores default
+  paragraphs,
+  paragraph,
+ 
+  marginX = "mx-6",
+  marginB = "mb-6",
   subtitleSize = "text-xl",
   paragraphSize = "text-md",
   subtitleColor = "text-[var(--color-neutral-800)]",
@@ -17,16 +19,34 @@ const TextBlock = ({
   subtitleAlign = "text-center",
   paragraphAlign = "text-center",
 }) => {
-  // Si no se proporciona 'paragraphs' pero sí 'paragraph', lo envolvemos en un array.
-  const paraArray = paragraphs ? paragraphs : (paragraph ? [paragraph] : []);
+  const paraArray = paragraphs ?? (paragraph ? [paragraph] : []);
 
   return (
-    <div className="mt-2 mb-6 mx-6">
-      <p className={`${subtitleAlign} ${subtitleWeight} ${subtitleSize} ${subtitleColor} ${subtitleClassName}`}>
+    <div className={`mt-2 ${marginB} ${marginX}`}>
+      <p
+        className={`
+          ${subtitleAlign}
+          ${subtitleWeight}
+          ${subtitleSize}
+          ${subtitleColor}
+          ${subtitleClassName}
+        `}
+      >
         {subtitle}
       </p>
+
       {paraArray.map((para, idx) => (
-        <p key={idx} className={`mt-4 xl:mt-2 ${paragraphAlign} ${paragraphWeight} ${paragraphSize} ${paragraphColor} ${paragraphClassName}`}>
+        <p
+          key={idx}
+          className={`
+            mt-4 xl:mt-2
+            ${paragraphAlign}
+            ${paragraphWeight}
+            ${paragraphSize}
+            ${paragraphColor}
+            ${paragraphClassName}
+          `}
+        >
           {para}
         </p>
       ))}

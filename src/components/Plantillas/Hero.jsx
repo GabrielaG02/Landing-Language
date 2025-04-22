@@ -2,7 +2,7 @@
 import React from 'react';
 import Button from '../Atoms/Button';
 import Overlay from '../Atoms/Overlay';
-import heroBackground from '../../assets/hero-background.svg'
+import img from '../../assets/imgHome1.svg'
 
 export default function Hero() {
   const handleContactClick = () => {
@@ -16,8 +16,8 @@ export default function Hero() {
   //   window.open("https://training.sap.com/training-locations/co/bogota-business-support", "_blank");
   // };
   return (
-    <section id='inicio' className="relative h-full min-h-[100vh] lg:h-[100vh] flex justify-center sm:justify-start items-center  px-10 md:px-20 bg-cover bg-center"
-      style={{ backgroundImage: `url(${heroBackground})` }}
+    <section id='Home' className="relative h-full min-h-[100vh] lg:h-[100vh] flex justify-center sm:justify-start items-center  px-10 md:px-20 bg-cover bg-center"
+      style={{ backgroundImage: `url(${img})` }}
     >
       <Overlay className="z-20"/>
       {/* Contenido Izquierdo */}
