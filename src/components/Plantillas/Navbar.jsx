@@ -7,27 +7,32 @@ const navbarlinks = [
   {
     id: 1,
     title: "Home",
-    link: "#Home",
+    link: "#inicio",
   },
   {
     id: 2,
     title: "About Us",
-    link: "#acerca",
+    link: "/AboutUs",
   },
   {
     id: 3,
-    title: "Blog",
-    link: "#blog",
+    title: "Services",
+    link: "#services",
   },
   {
     id: 4,
+    title: "Blog",
+    link: "/Blog",
+  },
+  {
+    id: 5,
     title: "Contact",
     link: "#contact",
   },
 ]
 
 const redirectWhatsApp = () => {
-  window.open("https://wa.me/573155381468?text=Hola,%20necesito%20informaci%C3%B3n%20sobre%20Cursos%20SAP", "_blank");
+  window.open(" https://wa.me/14157244998?text=Hello,%20I%20would%20like%20to%20get%20information%20about%20the%20services%20offered%20by%20Latin%20Language%20Solutions", "_blank");
 };
 
 function Navbar() {
@@ -56,10 +61,10 @@ function Navbar() {
 
         {/* Botón con ícono de WhatsApp */}
         <Button
-          text="Contact Us"
+          text="Contact an Advisor"
           tipo="navbar"
           onClick={redirectWhatsApp}
-          // iconName="bi bi-whatsapp"
+          iconName="bi bi-whatsapp"
         />
 
         {/* Menú hamburguesa para móviles */}

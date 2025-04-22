@@ -1,68 +1,58 @@
-// src/components/Molecules/Form.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-import Icon from '../Atoms/Icon';
 import Input from '../Atoms/Input';
 import Button from '../Atoms/Button';
 
 export default function Form() {
+  const formRef = useRef(null);
+
   const [formData, setFormData] = useState({
-    nombre: "",
-    empresa: "",
-    telefono: "", // Valor que será manejado por PhoneInput
-    correo: "",
-    mensaje: ""
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
   });
 
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Regex para validar correo
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
 
-  // Manejo de campos de texto (excepto teléfono)
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Validación de correo
-    if (name === "correo") {
+    if (name === "email") {
       if (!emailRegex.test(value)) {
-        setErrors((prev) => ({ ...prev, correo: "Correo electrónico inválido." }));
+        setErrors((prev) => ({ ...prev, email: "Correo electrónico inválido." }));
       } else {
-        setErrors((prev) => ({ ...prev, correo: "" }));
+        setErrors((prev) => ({ ...prev, email: "" }));
       }
     }
   };
 
-  // Manejo específico del campo de teléfono (PhoneInput)
   const handlePhoneChange = (value) => {
-    setFormData((prev) => ({ ...prev, telefono: value }));
+    setFormData((prev) => ({ ...prev, phone: value }));
 
-    // Validación mínima: al menos 8 dígitos
     if (!value || value.replace(/\D/g, '').length < 8) {
-      setErrors((prev) => ({ ...prev, telefono: "Teléfono inválido." }));
+      setErrors((prev) => ({ ...prev, phone: "Teléfono inválido." }));
     } else {
-      setErrors((prev) => ({ ...prev, telefono: "" }));
+      setErrors((prev) => ({ ...prev, phone: "" }));
     }
   };
 
-  // Verifica si el formulario está listo para enviar
   const isFormValid = () => {
-    // Campos requeridos: nombre, empresa, teléfono, correo
-    const telDigits = formData.telefono.replace(/\D/g, ''); // Extraer sólo dígitos
+    const telDigits = formData.phone.replace(/\D/g, '');
     return (
-      formData.nombre.trim() !== "" &&
-      formData.empresa.trim() !== "" &&
+      formData.name.trim() !== "" &&
       telDigits.length >= 8 &&
-      formData.correo.trim() !== "" &&
-      emailRegex.test(formData.correo) &&
-      !errors.telefono &&
-      !errors.correo
+      formData.email.trim() !== "" &&
+      emailRegex.test(formData.email) &&
+      !errors.phone &&
+      !errors.email
     );
   };
 
@@ -70,22 +60,21 @@ export default function Form() {
     e.preventDefault();
     if (!isFormValid()) return;
 
-    const serviceID = "default_service";
-    const templateID = "template_b783s7t";
-    const userID = "service_rvhjmr5";
+    const serviceID = "service_u5ylzgv";
+    const templateID = "template_ldycs9e";
+    const publicKey = "d8hbR3vWeqvPfYgW8";
 
     emailjs
-      .send(serviceID, templateID, formData, userID)
+      .sendForm(serviceID, templateID, formRef.current, publicKey)
       .then(
         () => {
           setIsSubmitted(true);
           alert("¡Formulario enviado!");
           setFormData({
-            nombre: "",
-            correo: "",
-            telefono: "",
-            empresa: "",
-            mensaje: ""
+            name: "",
+            email: "",
+            phone: "",
+            message: ""
           });
         },
         (err) => {
@@ -95,49 +84,45 @@ export default function Form() {
       );
   };
 
-
   return (
     <div className="flex flex-col space-y-6">
-      {/* Ícono y texto de cabecera */}
       <div>
-
-        <h3 className="text-(--color-neutral-800) font-semibold text-lg">
-          Déjanos tus datos y nos pondremos en contacto contigo
+        <h2 className="text-3xl font-semibold text-[var(--color-primary)] mb-5">Contact Us</h2>
+        <h3 className="text-(--color-neutral-700) font-medium text-lg">
+          We are here to help with your linguistic needs
         </h3>
       </div>
 
-      {/* Formulario */}
-      <form onSubmit={handleSubmit} className="space-y-6 flex flex-col">
-        {/* Nombres Completos */}
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 flex flex-col" id="form">
         <Input
-          placeholder="Nombres Completos *"
+          placeholder="Name *"
           type="text"
-          name="nombre"
+          name="name"
           size="w-[90%]"
           inputColor="bg-(--color-neutral-300)"
-          value={formData.nombre}
+          value={formData.name}
           onChange={handleChange}
           disabled={isSubmitted}
         />
-        {/* Empresa */}
         <Input
-          placeholder="Empresa *"
-          type="text"
-          name="empresa"
+          placeholder="Mail *"
+          type="email"
+          name="email"
           size="w-[90%]"
           inputColor="bg-(--color-neutral-300)"
-          value={formData.empresa}
+          value={formData.email}
           onChange={handleChange}
           disabled={isSubmitted}
         />
+        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
-        {/* Teléfono con PhoneInput (banderas) */}
         <div className="w-[90%]">
           <PhoneInput
-            country={"co"}  // País inicial (puedes cambiarlo)
-            value={formData.telefono}
+            country={"co"}
+            value={formData.phone}
             onChange={handlePhoneChange}
             disabled={isSubmitted}
+            inputProps={{ name: "phone" }}
             inputStyle={{
               width: "100%",
               height: "2.5rem",
@@ -152,47 +137,25 @@ export default function Form() {
               border: "none",
             }}
           />
-          {/* Error de teléfono */}
-          {errors.telefono && (
-            <p className="text-red-500 text-sm">{errors.telefono}</p>
-          )}
+          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
         </div>
 
-        {/* Correo corporativo */}
         <Input
-          placeholder="Correo corporativo *"
-          type="email"
-          name="correo"
-          size="w-[90%]"
+          placeholder="Message"
+          type="textarea"
+          name="message"
+          size="w-[90%] h-[15vh]"
           inputColor="bg-(--color-neutral-300)"
-          value={formData.correo}
-          onChange={handleChange}
-          disabled={isSubmitted}
-        />
-        {/* Error de correo */}
-        {errors.correo && (
-          <p className="text-red-500 text-sm">{errors.correo}</p>
-        )}
-
-        {/* Mensaje (opcional) */}
-        <Input
-          placeholder="Mensaje (opcional)"
-          type="text"
-          name="mensaje"
-          size="w-[90%]"
-          inputColor="bg-(--color-neutral-300)"
-          value={formData.mensaje}
+          value={formData.message}
           onChange={handleChange}
           disabled={isSubmitted}
         />
 
-        {/* Botón de envío */}
         <div>
           <Button
             text={isSubmitted ? "Enviado" : "Enviar"}
             tipo="primario"
-            onClick={handleSubmit}
-            // Deshabilitar si no es válido o ya se envió
+            type="submit"
             disabled={!isFormValid() || isSubmitted}
           />
         </div>

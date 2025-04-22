@@ -1,6 +1,6 @@
 // Logo.jsx
 import React from 'react';
-import logo from '../../assets/Logo-Latin-Language-Solutions-1-1024x1024-338w.webp'; 
+import logo from '../../assets/Logo.svg'; 
 
 const Logo = ({ size = "w-16 h-16", ...props }) => {
   return (

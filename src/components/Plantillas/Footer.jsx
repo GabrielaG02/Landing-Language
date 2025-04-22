@@ -13,16 +13,19 @@ export default function Footer() {
       {/* Contenido principal del footer */}
       <div className="p-4">
         {/* Sección de redes sociales */}
-        <div className="flex items-center justify-center border-b-[1px] border-white p-6 lg:justify-between">
+        <div className="sm:flex items-center justify-center border-b-[1px] border-white p-6 lg:justify-between">
           {/* Texto solo visible en pantallas grandes */}
-          <div className="font-sans mr-12 hidden lg:block">
-            <span>
-              ¡Síguenos y descubre cómo revolucionamos la gestión del conocimiento!
-            </span>
+          <div className="font-sans  block sm:text-start space-y-2">
+            <h1>
+            ¿Don’t feel comfortable speaking English yet?
+            </h1>
+            <h1>
+            We live English interpretation!
+            </h1>
           </div>
 
           {/* Íconos de redes sociales */}
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center mt-5 sm:mt-0">
             {/* Instagram */}
             <a
               href="https://www.instagram.com/bscolombia.co/"
@@ -30,16 +33,16 @@ export default function Footer() {
               rel="noreferrer"
               className="mr-6 text-neutral-600 dark:text-neutral-200"
             >
-              <Icon name="bi bi-instagram" size="1em" className="h-4 w-4" />
+              <Icon name="bi bi-instagram" size="1.5em" className="h-4 w-4" />
             </a>
             {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/company/bscolombia/posts/?feedView=all"
               target="_blank"
               rel="noreferrer"
-              className="mr-6 text-neutral-600 dark:text-neutral-200"
+              className="text-neutral-600 dark:text-neutral-200"
             >
-              <Icon name="bi bi-linkedin" size="1em" className="h-4 w-4" />
+              <Icon name="bi bi-linkedin" size="1.5em" className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -49,19 +52,18 @@ export default function Footer() {
           {/* Información de la empresa */}
           <div className="w-full text-center lg:w-auto lg:text-left">
             <h6 className="font-archivo mb-4 font-semibold uppercase">
-              Business Support
+            Latin Language Solutions
             </h6>
             <p className="font-sans max-w-md mx-auto lg:mx-0">
-              Llevamos 20 años impulsando la innovación digital para optimizar
-              procesos y mejorar la competitividad empresarial en la
-              transformación tecnológica.
+            Latin Language Solutions specializes in legal and medical interpretation. 
+            We have experience in employee training, conferences, human resources meetings, and more. We proudly serve people traveling for tourism or business, dedicating ourselves to meeting their Spanish and Portuguese translation and interpretation needs into English.
             </p>
           </div>
 
           {/* Datos de contacto */}
           <div className="w-full text-center lg:w-auto lg:text-left mt-6 lg:mt-0 lg:text-left">
             <h6 className="font-archivo mb-4 font-semibold uppercase">
-              Contáctanos
+              Contact Us
             </h6>
 
             {/* Dirección */}
@@ -71,7 +73,7 @@ export default function Footer() {
                 size="1em"
                 className="inline-block w-5 h-5 mr-3"
               />
-              Carrera 7B No 123 - 46
+              San Francisco, CA 94102
             </p>
 
             {/* Ubicación (Bogotá) */}
@@ -81,7 +83,7 @@ export default function Footer() {
                 size="1em"
                 className="inline-block w-5 h-5 mr-3"
               />
-              Bogotá - Colombia
+              United States of America
             </p>
 
             {/* Teléfono */}
@@ -91,7 +93,7 @@ export default function Footer() {
                 size="1em"
                 className="inline-block w-5 h-5 mr-3"
               />
-              + (60 1) 384 17 44
+              + (415) 724-4998
             </p>
 
             {/* Correo */}
@@ -101,24 +103,15 @@ export default function Footer() {
                 size="1em"
                 className="inline-block w-5 h-5 mr-3"
               />
-              comercial@bscolombia.com.com
+              tatiana@latinlanguagesolutions.com
+
             </p>
           </div>
         </div>
       </div>
 
       {/* Sección de copyright */}
-      <div className="bg-(--color-neutral-900) p-4 text-center dark:graydark">
-        <span>Todos los Derechos Reservados a Business Support S.A.S: </span>
-        <a
-          className="font-semibold text-neutral-600 dark:text-neutral-400"
-          href="https://bscolombia.com.co/web/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          BS
-        </a>
-      </div>
+
     </footer>
   );
 }

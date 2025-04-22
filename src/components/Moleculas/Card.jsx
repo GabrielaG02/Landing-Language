@@ -24,9 +24,9 @@ export default function Card({
   const variantClasses = {
     principal: `
       bg-[var(--color-white)]
-          w-[75vw] h-fit pb-10 min-h-[55vh]
-          sm:w-[45vw] sm:min-h-full
-          md:w-[28vw] lg:w-[25vw]
+          pb-10 
+          min-h-[55vh] sm:min-h-[65vh]
+          mx-auto
     `,
     comentarios: `
       bg-[var(--color-secondary-100)]

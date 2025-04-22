@@ -11,7 +11,7 @@ export default function Objectives() {
   return (
     <section
       id="acerca"
-      className="md:flex w-full py-10 bg-white mt-[8vw]"
+      className="md:flex w-full py-10 bg-white mt-[8vw] scroll-mt-22 md:scroll-mt-32"
     >
       {/* Bloque de texto y botón (en móvil se mostrará primero) */}
       <div className="order-1 md:order-2 space-y-8 justify-self-center px-[5vw] sm:px-16 pb-10 md:pb-0 xl:px-0 xl:pl-45 md:w-60/100 flex flex-col justify-center">

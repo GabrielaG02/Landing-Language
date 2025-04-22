@@ -27,22 +27,21 @@ export default function Banner() {
     setIsHovered(false);
   };
 
-  // Alterna el estado al hacer click
-  const handleClick = () => {
+
+  const redirectWhatsApp = () => {
+    window.open(" https://wa.me/14157244998?text=Hello,%20I%20would%20like%20to%20get%20information%20about%20the%20services%20offered%20by%20Latin%20Language%20Solutions", "_blank");
     setExpanded(prev => !prev);
   };
-
   return (
     <div className="fixed bottom-5 right-0 z-50">
       <a
-        href="#calendario"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onClick={handleClick}
+        onClick={redirectWhatsApp}
         className={`
           group
           flex items-center
-          ${expanded ? 'w-[16rem]' : 'w-18 h-16'}
+          ${expanded ? 'w-[12rem]' : 'w-18 h-16'}
           rounded-l-full
           bg-(--color-secondary)
           text-white
@@ -53,7 +52,7 @@ export default function Banner() {
         `}
       >
         <Icon
-          name="bi bi-calendar-event-fill"
+          name="bi bi-whatsapp"
           size="2rem"
           className="text-(--color-light-700) flex-shrink-0"
         />
@@ -64,10 +63,10 @@ export default function Banner() {
           `}
         >
           <span className="text-(--color-light-500) font-bold text-base leading-tight">
-            Próximos cursos SAP
+          Talk to us
           </span>
           <span className="text-sm leading-tight">
-            Revisa el calendario
+          on WhatsApp
           </span>
         </div>
       </a>

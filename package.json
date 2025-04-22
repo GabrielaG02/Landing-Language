@@ -15,9 +15,11 @@
     "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.7.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-phone-input-2": "^2.15.1",
+    "react-router-dom": "^6.30.0",
     "swiper": "^11.2.6",
     "tailwindcss": "^4.1.4"
   },

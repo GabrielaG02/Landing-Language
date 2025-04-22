@@ -18,7 +18,7 @@ export default function HamburguerButton({ links}) {
 
     {/* Menú desplegable */}
     {isOpen && (
-      <div className="absolute top-[4rem] right-0 mt-2 w-auto bg-(--color-info) shadow-lg">
+      <div className="absolute top-[4.5rem] right-5 mt-2 w-auto bg-(--color-info) shadow-lg">
         <ul className="flex flex-col">
           {links.map(link => (
             <li key={link.id}>

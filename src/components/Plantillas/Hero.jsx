@@ -43,6 +43,7 @@ export default function Hero() {
             text="Learn More"
             onClick={handleContactClick}
             tipo="primario"
+            iconName="bi bi-plus-circle"
           />
 
         </div>
