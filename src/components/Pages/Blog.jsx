@@ -7,7 +7,7 @@ import img4 from '../../assets/imgAU5.svg';
 
 
 
-export default function BlogPage() {
+function BlogPage() {
   const infoBlogData = [
     {
       id: 'uscis-012025',
@@ -76,3 +76,4 @@ export default function BlogPage() {
     </div>
   );
 }
+export default BlogPage
