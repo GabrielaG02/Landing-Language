@@ -1,18 +1,16 @@
-// DynamicExpander.jsx
+// DynamicExpander.jsx (actualizado)
 import React, { useState, useEffect } from 'react'
 import Card from '../Moleculas/Card.jsx'
 
 export default function DynamicExpander({ cards = [] }) {
   const [expandedId, setExpandedId] = useState(null)
   const [columns, setColumns] = useState(1)
+  const cardHeightVh = 570
 
-  const cardHeightVh = 80
-
-  // Determina el número de columnas según el ancho
+  // Ajusta columnas según ancho
   const updateColumns = () => {
     const w = window.innerWidth
-    if (w >= 1024) setColumns(4)
-    else if (w >= 768) setColumns(3)
+    if (w >= 768) setColumns(3)
     else if (w >= 640) setColumns(2)
     else setColumns(1)
   }
@@ -26,14 +24,17 @@ export default function DynamicExpander({ cards = [] }) {
   const handleClick = (id) =>
     setExpandedId(prev => (prev === id ? null : id))
 
-  // *** Aquí usamos cards en lugar de initialItems ***
+  // Cálculo de altura solo para columns > 1
   const rows = Math.ceil(cards.length / columns)
   const containerHeightVh = rows * cardHeightVh
 
   return (
     <div
-      className="relative lg:w-[80vw] mx-auto transition-all duration-500 ease-in-out"
-      style={{ height: `${containerHeightVh}vh` }}
+      className={`
+        lg:w-[80vw] mx-auto transition-all duration-500 ease-in-out
+        ${columns === 1 ? '' : 'relative'}
+      `}
+      style={columns === 1 ? {} : { height: `${containerHeightVh}px` }}
     >
       {cards.map((item, i) => {
         const isExpanded = item.id === expandedId
@@ -42,18 +43,25 @@ export default function DynamicExpander({ cards = [] }) {
         const colWidth = 100 / columns
         const top = rowIndex * cardHeightVh
 
+        // Solo en desktop/tablet usamos posicionamiento absoluto
+        const absoluteStyle = columns === 1 ? {} : {
+          left: isExpanded ? '0%' : `${colIndex * colWidth}%`,
+          top: `${top}px`,
+          width: isExpanded ? '100%' : `${colWidth}%`,
+          height: `${cardHeightVh}px`,
+          zIndex: isExpanded ? 10 : 1,
+        }
+
         return (
           <div
             key={item.id}
             onClick={() => handleClick(item.id)}
-            className="absolute cursor-pointer transition-all duration-500 ease-in-out px-[1vw] pb-[2vh]"
-            style={{
-              left: isExpanded ? '0%' : `${colIndex * colWidth}%`,
-              top: `${top}vh`,
-              width: isExpanded ? '100%' : `${colWidth}%`,
-              height: `${cardHeightVh}vh`,
-              zIndex: isExpanded ? 10 : 1,
-            }}
+            className={`
+              cursor-pointer transition-all duration-500 ease-in-out
+              px-[1vw] pb-[2vh]
+              ${columns === 1 ? 'static h-auto' : 'absolute'}
+            `}
+            style={absoluteStyle}
           >
             <Card
               imageSrc={item.imageSrc}
@@ -64,7 +72,7 @@ export default function DynamicExpander({ cards = [] }) {
               paragraphExtended={item.paragraphExtended}
               isExpanded={isExpanded}
               variant="principal"
-              /* unimos cualquier clase extra de item.span con la anulación de min-h y altura full */
+              txtBtn={isExpanded ? 'Close' : 'Learn More'}
               span={`${item.span ?? ''} !min-h-0 h-full`}
             />
             {isExpanded && (

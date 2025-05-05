@@ -3,11 +3,9 @@ import React from 'react';
 import ModalityItem from '../Moleculas/ItemIcon.jsx';
 import Button from '../Atoms/Button.jsx';
 import img from '../../assets/imgOS1.svg'
-import Card from '../Moleculas/Card.jsx';
 import DynamicExpander from '../Organismos/DynamicExpander.jsx'
 import ImageCard1 from '../../assets/ImageCard1.svg'
 import ImageCard2 from '../../assets/ImageCard2.svg'
-import ImageCard3 from '../../assets/ImageCard3.svg'
 import ImageCard4 from '../../assets/ImageCard4.svg'
 
 
@@ -63,20 +61,9 @@ Escort Interpretation: Specialized linguistic accompaniment in legal situations.
 Legal Document Translation: Certified translation of legal documents.
 `
     },
+
     {
       id: 3,
-      imageSrc: ImageCard3,
-      imageAlt: 'Public Notary Services',
-      title: 'Public Notary Services',
-      paragraph: 'Certified notarial acts and document authentication for legal, business, and personal needs.',
-      paragraphExtended: `Acknowledgments: Verify signer identity and witness signatures on deeds, contracts, powers of attorney, and other documents
-      Jurats: Administer oaths and affirmations for affidavits, sworn statements, and declarations
-      Certified Copies: Certify true copies of original documents (birth certificates, transcripts, corporate records)
-      Mobile Notary & Apostille Support: On‑site notarization by appointment plus guidance through apostille legalization
-      Multilingual Assistance: Full service for Spanish and Portuguese clients, ensuring clarity and U.S. compliance`
-    },
-    {
-      id: 4,
       imageSrc: ImageCard4,
       imageAlt: 'Other Services',
       title: 'Other Services',

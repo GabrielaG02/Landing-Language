@@ -14,6 +14,7 @@ export default function Card({
   isExpanded = false,   // <–– nuevo, por defecto false
   span = '',
   variant = 'principal',      // <-- nuevo prop
+  txtBtn='Learn More',
 }) {
   // clases comunes a todas las cards
   const baseClasses = `
@@ -21,13 +22,7 @@ export default function Card({
 
     rounded-xl shadow-sm text-center overflow-hidden
   `
-  const handleContactClick = () => {
-    // Busca el elemento con id "contact" y hace scroll hacia él
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
 
   // estilos por variante
   const variantClasses = {
@@ -49,7 +44,7 @@ export default function Card({
         <img
           src={imageSrc}
           alt={imageAlt}
-          className="w-full h-1/2 object-cover mx-auto mb-4"
+          className="w-full sm:h-28/100 md:h-4/10 object-cover mx-auto mb-4"
         />
       ) : (
         <Icon
@@ -93,9 +88,8 @@ export default function Card({
       {variant === 'principal' && (
         <div className="w-fit mx-6 mt-3">
           <Button
-            text="Contact Us"
+            text={txtBtn}
             tipo="navbar"
-            onClick={handleContactClick}
           />
         </div>
       )}
