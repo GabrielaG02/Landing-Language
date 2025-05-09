@@ -105,9 +105,7 @@ Interpretation for Business and Political Meetings: Facilitates communication in
         <p className="text-lg md:text-xl font-medium text-(--color-secondary)">
           A wide range of linguistic services
         </p>
-        <p className="text-base md:text-lg font-medium text-(--color-neutral-700)">
-          Interactive cards with icons. Expanded descriptions on click.
-        </p>
+
 
         {/* Lista de 4 modalidades */}
         <div >

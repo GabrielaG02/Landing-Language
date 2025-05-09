@@ -40,10 +40,9 @@ export default function Hero() {
         <div className=' space-x-4 space-y-5'>
           {/* Botón de "Contáctanos"  */}
           <Button
-            text="Learn More"
+            text="Contact Us"
             onClick={handleContactClick}
             tipo="primario"
-            iconName="bi bi-plus-circle"
           />
 
         </div>

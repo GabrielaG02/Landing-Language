@@ -118,7 +118,7 @@ export default function Form() {
 
         <div className="w-[90%]">
           <PhoneInput
-            country={"co"}
+            country={"us"}
             value={formData.phone}
             onChange={handlePhoneChange}
             disabled={isSubmitted}
